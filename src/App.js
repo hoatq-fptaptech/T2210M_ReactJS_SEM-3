@@ -1,15 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Student from './components/Student';
-import Teacher from './components/Teacher';
+import Classroom from './components/Classroom';
 
 function App() {
   return (
     <div className="App">
-        <Student student_name="Phùng Duy Hùng"/>
-        <Student student_name="Nguyễn Thị Hương"/>
-        <Teacher teacher_name="Nguyễn Duy Hoàng"/>
-        <Teacher teacher_name="Trịnh Quang Hoà"/>
+        <Classroom/>
     </div>
   );
 }
