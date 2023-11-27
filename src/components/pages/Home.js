@@ -26,7 +26,7 @@ class HomePage extends React.Component{
                     {
                         products.map((e,k)=>{
                             return (
-                            <Col xs={3}>
+                            <Col key={k} xs={3}>
                                 <Card>
                                     <Card.Img src={e.thumbnail}/>
                                     <Card.Body>
