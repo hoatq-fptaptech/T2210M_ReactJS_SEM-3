@@ -28,13 +28,13 @@ class HomePage extends React.Component{
                             return (
                             <Col xs={3}>
                                 <Card>
-                                    <Card.Img src="/images/product/product-1.jpg"/>
+                                    <Card.Img src={e.thumbnail}/>
                                     <Card.Body>
-                                        <Card.Title>Tên Sản phẩm</Card.Title>
-                                        <Card.Text>Mô tả sản phẩm</Card.Text>
+                                        <Card.Title>{e.title}</Card.Title>
+                                        <Card.Text>{e.description}</Card.Text>
                                     </Card.Body>
                                     <Card.Footer>
-                                        <Card.Text>12$</Card.Text>
+                                        <Card.Text>{e.price}$</Card.Text>
                                         <Card.Link className="btn btn-primary">
                                             Add To Cart
                                         </Card.Link>
