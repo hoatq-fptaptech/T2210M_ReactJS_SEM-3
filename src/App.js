@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import Classroom from './components/Classroom';
+import NavComponent from './components/shared/nav';
 
 function App() {
   return (
     <div className="App">
-        <Classroom/>
+        <NavComponent/>
+        <div className='content'>
+
+        </div>
     </div>
   );
 }
