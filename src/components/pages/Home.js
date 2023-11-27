@@ -13,7 +13,7 @@ class HomePage extends React.Component{
         const url = `https://dummyjson.com/products?limit=12`;
         fetch(url).then(rs=>rs.json())
         .then(rs=>{
-            this.setState({products: rs.products});
+            this.setState({products: rs.products})
         })
         .catch(err=>{console.log(err)});
     }
