@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {  Card, Col, Row } from "react-bootstrap";
 import { get_product } from "../../services/product.service";
+import { Link } from "react-router-dom";
 function CategoryPage(){
     const [products,setProducts] = useState([]);
     const load_products = async ()=>{
@@ -29,7 +30,7 @@ function CategoryPage(){
                                     <Card.Footer>
                                         <Card.Text>{e.price}$</Card.Text>
                                         <Card.Link className="btn btn-primary">
-                                            Add To Cart
+                                            <Link className="text-white" to={"/product/"+e.id}>Add to cart</Link>
                                         </Card.Link>
                                     </Card.Footer>
                                 </Card>
