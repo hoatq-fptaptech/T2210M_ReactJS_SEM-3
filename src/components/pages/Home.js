@@ -1,5 +1,6 @@
 import React from "react";
 import {  Card, Col, Row } from "react-bootstrap";
+import { get_product } from "../../services/product.service";
 
 class HomePage extends React.Component{
     constructor(props){
@@ -8,14 +9,9 @@ class HomePage extends React.Component{
             products: []
         }
     }
-    componentDidMount(){
-        // call api
-        const url = `https://dummyjson.com/products?limit=12`;
-        fetch(url).then(rs=>rs.json())
-        .then(rs=>{
-            this.setState({products: rs.products})
-        })
-        .catch(err=>{console.log(err)});
+    async componentDidMount(){
+        const products = await get_product(12);
+        this.setState({products:products});
     }
     render(){
         const products = this.state.products;
