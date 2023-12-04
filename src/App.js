@@ -8,12 +8,13 @@ import ProductPage from './components/pages/Product';
 
 import STATE from './context/initState';
 import { ContextProvider } from './context/context';
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
+import reducer from './context/reducer';
 
 function App() {
-  const [state,setState]=  useState(STATE);
+  const [state,dispatch]=  useReducer(reducer,STATE);
   return (
-    <ContextProvider value={{state,setState}}>
+    <ContextProvider value={{state,dispatch}}>
     <div className="App">
         <NavComponent/>
         <div className='content'>

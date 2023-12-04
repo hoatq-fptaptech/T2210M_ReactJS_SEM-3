@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Context from "../../context/context";
 
 function NavComponent(props){
-    const {state,setState} = useContext(Context);
+    const {state} = useContext(Context);
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container">

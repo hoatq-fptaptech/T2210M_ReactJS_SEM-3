@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { detail_product } from "../../services/product.service";
 import { useParams } from "react-router-dom";
 import Context from "../../context/context";
+import { ACTION } from "../../context/reducer";
 
 function ProductPage(){
     const [product,setProduct] = useState({});
@@ -13,7 +14,7 @@ function ProductPage(){
     useEffect(()=>{
         loadProduct();
     },[])
-    const {state,setState} = useContext(Context);
+    const {state,dispatch} = useContext(Context);
     const addToCart = ()=>{
         let cart = state.cart;
         let check = true;
@@ -30,7 +31,8 @@ function ProductPage(){
         }
         // state.cart = cart;
         // setState(state);
-        setState({...state,cart:cart});
+        // setState({...state,cart:cart});
+        dispatch({type: ACTION.UPDATE_CART,payload:cart});
     }
     return (
         <div className="container">
