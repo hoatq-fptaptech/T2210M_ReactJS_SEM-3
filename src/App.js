@@ -6,8 +6,14 @@ import HomePage from './components/pages/Home';
 import CategoryPage from './components/pages/Category';
 import ProductPage from './components/pages/Product';
 
+import STATE from './context/initState';
+import { ContextProvider } from './context/context';
+import { useState } from 'react';
+
 function App() {
+  const [state,setState]=  useState(STATE);
   return (
+    <ContextProvider value={{state,setState}}>
     <div className="App">
         <NavComponent/>
         <div className='content'>
@@ -18,6 +24,7 @@ function App() {
           </Routes>
         </div>
     </div>
+    </ContextProvider>
   );
 }
 

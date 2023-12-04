@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import Context from "../../context/context";
 
 function NavComponent(props){
+    const {state,setState} = useContext(Context);
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container">
@@ -17,7 +20,7 @@ function NavComponent(props){
                         <Link to="/category" className="nav-link">Category</Link>
                     </li>
                     <li className="nav-item">
-                    <Link to="/product" className="nav-link">Product</Link>
+                        <Link to="/cart" className="nav-link">Cart ({state.cart.length})</Link>
                     </li>
                 </ul>
                 <form className="d-flex" role="search">
